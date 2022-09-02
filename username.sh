@@ -1,9 +1,6 @@
 pass=CyberTaipan123!
 ufw enable
 echo "Firewall Enabled."
-filename='users.txt'
-n=1
-while read line; do
-echo "Line No. $n : $line"
-n=$((n+1))
-done < $filename
+while IFS= read -r line; do
+    echo "Text read from file: $line"
+done < users.txt
